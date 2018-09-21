@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Diagnose";
+}
+<h2>Diagnose</h2>
+@using (Html.BeginForm("Diagnose", "Home", FormMethod.Post))
+{
+    <label class="container">
+        Basic Environment
+        <input name="diagnoseTypes" type="checkbox" value="0">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+        Application
+        <input name="diagnoseTypes" type="checkbox" value="1">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+        MSMQ
+        <input name="diagnoseTypes" type="checkbox" value="2">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+        FDIM
+        <input name="diagnoseTypes" type="checkbox" value="3">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+        BRE
+        <input name="diagnoseTypes" type="checkbox" value="4">
+        <span class="checkmark"></span>
+    </label>
+
+    <label class="container">
+        Docker
+        <input name="diagnoseTypes" type="checkbox" value="5">
+        <span class="checkmark"></span>
+    </label>
+
+    <input type="submit" value="Diagnose" />
+}
