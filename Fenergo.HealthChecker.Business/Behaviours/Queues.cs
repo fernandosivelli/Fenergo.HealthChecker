@@ -3,7 +3,7 @@ using System;
 
 namespace Fenergo.HealthChecker.Business.Behaviours
 {
-    public class ApplicationUi : IBehaviour
+    public class Queues : IBehaviour
     {
         public Result Execute()
         {

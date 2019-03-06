@@ -8,10 +8,11 @@ namespace Fenergo.HealthChecker.Business
 {
     public enum ProcessorTypeEnum
     {
-        Environment = 0,
-        ApplicationUi = 1,
-        Msmq = 2,
-        Fdim = 3,
-        Bre = 4
+        Bre = 1,
+        Fdim = 2,
+        ElasticSearch = 3,
+        Queues = 4,
+        Application = 5,
+        Logs = 6
     }
 }

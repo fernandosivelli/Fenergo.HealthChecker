@@ -2,14 +2,18 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/Fenergo.HealthChecker.WebApi",
+      "sslPort": 0
+    },
     "iisExpress": {
-      "applicationUrl": "http://localhost:65323/",
+      "applicationUrl": "http://localhost:8191/",
       "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
-      "commandName": "IISExpress",
+      "commandName": "IIS",
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {
@@ -17,13 +21,13 @@
       }
     },
     "Fenergo.HealthChecker.WebApi": {
-      "commandName": "Project",
+      "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "http://localhost:65324/"
+      "applicationUrl": "http://localhost:9091/"
     }
   }
 }

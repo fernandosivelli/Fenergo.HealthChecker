@@ -10,29 +10,32 @@ namespace Fenergo.HealthChecker.Business
 {
     public class Processor
     {
-        public Result Execute(List<ProcessorTypeEnum> types)
+        public Result Execute(List<int> types)
         {
-            var result =  DefineBehaviour(types.First()).Execute();
+
+            var result = new Result();
+            foreach (var item in types) {
+                var behaviour = DefineBehaviour(item).Execute();
+            }
+
             if (result.Messages.Count > 0)
                 result.Success = false;
 
             return result;
         }
 
-        private IBehaviour DefineBehaviour(ProcessorTypeEnum type)
+        private IBehaviour DefineBehaviour(int type)
         {
-            switch (type)
+            switch ((ProcessorTypeEnum)type)
             {
-                case ProcessorTypeEnum.Environment:
-                    return new Behaviours.Environment();
-                case ProcessorTypeEnum.ApplicationUi:
-                    return new ApplicationUi();
-                case ProcessorTypeEnum.Msmq:
-                    return new Msmq();
-                case ProcessorTypeEnum.Fdim:
-                    return new Fdim();
                 case ProcessorTypeEnum.Bre:
                     return new Bre();
+                case ProcessorTypeEnum.Fdim:
+                    return new Fdim();
+                case ProcessorTypeEnum.ElasticSearch:
+                    return new ElasticSearch();
+                case ProcessorTypeEnum.Queues:
+                    return new Queues();
                 default:
                     return new Default();
             }

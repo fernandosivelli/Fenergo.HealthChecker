@@ -33,3 +33,28 @@
         display: none;
     }
 }
+
+.hover {
+    border: 2px solid white;
+}
+
+.clicked {
+    border: 2px solid white;
+}
+
+.square {
+    background-color: #0078D7;
+    width: 12%;
+    float: left;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.greenSquare {
+    background-color: #009E49;
+    width: 12%;
+    float: left;
+    margin-left: 5px;
+    text-align: center;
+}
+

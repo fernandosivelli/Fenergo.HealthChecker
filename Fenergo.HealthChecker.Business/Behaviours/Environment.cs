@@ -12,6 +12,9 @@ namespace Fenergo.HealthChecker.Business.Behaviours
         {
             var result = new Result(true);
             CheckEnvironmentVariables(result);
+            CheckSqlService(result);
+            CheckDotNetVersion(result);
+            CheckNodeJsVersion(result);
             return result;
         }
 
@@ -40,13 +43,27 @@ namespace Fenergo.HealthChecker.Business.Behaviours
 
             return result;
         }
+
         private Result CheckDotNetVersion(Result result)
         {
             using (RegistryKey ndpKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32).OpenSubKey("SOFTWARE\\Microsoft\\NET Framework Setup\\NDP\\v4\\Full\\"))
             {
                 int releaseKey = Convert.ToInt32(ndpKey.GetValue("Release"));
                 if (releaseKey < 460798)
-                    result.Messages.Add("Sql Server service not found.");
+                    result.Messages.Add(".Net version is wrong.");
+            }
+            return result;
+        }
+        private Result CheckNodeJsVersion(Result result)
+        {
+            using (RegistryKey ndpKey = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry32).OpenSubKey("SOFTWARE\\Node.js"))
+            {
+                int nodeVersion = Convert.ToInt32(ndpKey.GetValue("Version"));
+
+                if (nodeVersion == 0)
+                    result.Messages.Add("Node.js not found.");
+                if (nodeVersion != 750)
+                    result.Messages.Add("Node.js with wrong version.");
             }
             return result;
         }

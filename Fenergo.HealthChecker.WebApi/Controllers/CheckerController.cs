@@ -25,7 +25,7 @@ namespace Fenergo.HealthChecker.WebApi.Controllers
         }
 
         [HttpPost]
-        public string Post([FromBody]string value = "[0, 1, 2, 4]")
+        public string Post([FromBody]string value)
         {
             var obj = JsonConvert.DeserializeObject<List<int>>(value);
             var enumList = obj.Select(x => (ProcessorTypeEnum)x);

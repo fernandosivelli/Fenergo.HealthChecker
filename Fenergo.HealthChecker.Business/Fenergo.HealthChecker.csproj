@@ -43,12 +43,12 @@
   <ItemGroup>
     <Compile Include="Behaviours\Default.cs" />
     <Compile Include="Processor.cs" />
-    <Compile Include="Behaviours\ApplicationUi.cs" />
+    <Compile Include="Behaviours\ElasticSearch.cs" />
     <Compile Include="Behaviours\Bre.cs" />
     <Compile Include="Behaviours\Environment.cs" />
     <Compile Include="Behaviours\Fdim.cs" />
     <Compile Include="Behaviours\IBehaviour.cs" />
-    <Compile Include="Behaviours\Msmq.cs" />
+    <Compile Include="Behaviours\Queues.cs" />
     <Compile Include="ProcessorTypeEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Result.cs" />

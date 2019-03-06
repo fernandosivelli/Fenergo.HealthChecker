@@ -3,7 +3,7 @@ using System;
 
 namespace Fenergo.HealthChecker.Business.Behaviours
 {
-    public class Msmq : IBehaviour
+    public class ElasticSearch : IBehaviour
     {
         public Result Execute()
         {

@@ -2,44 +2,45 @@
 @{
     ViewData["Title"] = "Diagnose";
 }
-<h2>Diagnose</h2>
 @using (Html.BeginForm("Diagnose", "Home", FormMethod.Post))
 {
-    <label class="container">
-        Basic Environment
-        <input name="diagnoseTypes" type="checkbox" value="0">
-        <span class="checkmark"></span>
-    </label>
+    <div style="margin-top:5px; line-height:120px;">
+        <div class="square" name="option">
+            <span style="font-size:22px;">Environment</span>
+        </div>
+        <div class="square" name="option">
 
-    <label class="container">
-        Application
-        <input name="diagnoseTypes" type="checkbox" value="1">
-        <span class="checkmark"></span>
-    </label>
+            <span style="font-size:22px;">Application</span>
+        </div>
+        <div class="square" name="option">
+            <span style="font-size:22px;">MSMQ</span>
+        </div>
+        <div class="square" name="option">
+            <span style="font-size:22px;">FDIM</span>
+        </div>
+        <div class="square" name="option">
+            <span style="font-size:22px;">BRE</span>
+        </div>
+        <div class="square" name="option">
+            <span style="font-size:22px;">Docker</span>
+        </div>
+        <div class="greenSquare" name="option">
 
-    <label class="container">
-        MSMQ
-        <input name="diagnoseTypes" type="checkbox" value="2">
-        <span class="checkmark"></span>
-    </label>
-
-    <label class="container">
-        FDIM
-        <input name="diagnoseTypes" type="checkbox" value="3">
-        <span class="checkmark"></span>
-    </label>
-
-    <label class="container">
-        BRE
-        <input name="diagnoseTypes" type="checkbox" value="4">
-        <span class="checkmark"></span>
-    </label>
-
-    <label class="container">
-        Docker
-        <input name="diagnoseTypes" type="checkbox" value="5">
-        <span class="checkmark"></span>
-    </label>
-
-    <input type="submit" value="Diagnose" />
+            <span style="font-size:22px;">Diagnose</span>
+        </div>
+    </div>
 }
+
+<script>
+    $(document).ready(function () {
+        $('div[name=option]').hover(
+            function () { $(this).addClass("hover"); },
+            function () { $(this).removeClass("hover"); }
+        );
+
+        $('div[name=option]').hover(
+            function () { $(this).addClass("hover"); },
+            function () { $(this).removeClass("hover"); }
+        );
+    });
+</script>
